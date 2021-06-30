@@ -396,5 +396,5 @@ for sp in songs_paths:
 
 
 # Store the Results
-with open('chords_dimol_beatles.py', 'w') as f:
+with open('chords_key_beatles.py', 'w') as f:
     f.write('all_chords = %s' % all_chords)
