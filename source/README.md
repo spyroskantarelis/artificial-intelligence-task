@@ -102,6 +102,8 @@ This script is used to remove '.txt' from each song, so we can define our ontolo
 
 3. Add each chord and its corresponding data property values to a graph.
 
+4. Save every song's RDF to a folder of your choice.
+
 ### 2. Key enriched data
 
 (Script [convert_chord_degrees_to_rdf.py](convert_chord_degrees_to_rdf.py))
@@ -112,9 +114,16 @@ This script is used to remove '.txt' from each song, so we can define our ontolo
 
 3. Add every chord and its corresponding object property values to a graph.
 
+4. Save every song's RDF to a folder of your choice.
+
 ### Ontology
 
 More info about the ontology can be found [here](../ontology).
+
+### Reasoning and SPARQL Queries
+
+You can use a triplestore in order to reason and use SPARQL queries. We used GraphDB (https://graphdb.ontotext.com/). You can import our ontology and the RDF files created by
+our python scripts. Our ontology is developed within the OWL2-RL profile (https://www.w3.org/TR/owl2-profiles/#OWL_2_RL).
 
 ## Authors
 
