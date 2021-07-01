@@ -98,7 +98,9 @@ This script is used to remove '.txt' from each song, so we can define our ontolo
 
 1. Define the data properties (hasBars, hasTimeSignature) of our ontology.
 
-2. Add every chord and its corresponding data property values to a graph.
+2. Name every chord and define its type.
+
+3. Add each chord and its corresponding data property values to a graph.
 
 ### 2. Key enriched data
 
@@ -106,7 +108,9 @@ This script is used to remove '.txt' from each song, so we can define our ontolo
 
 1. Define the object properties (hasNext, hasPrevious, hasKey) of our ontology.
 
-2. Add every chord and its corresponding object property values to a graph.
+2. Name every chord and key and define their types.
+
+3. Add every chord and its corresponding object property values to a graph.
 
 ### Ontology
 
