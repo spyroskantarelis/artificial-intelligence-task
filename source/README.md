@@ -68,6 +68,45 @@ Chord record enrichment
 
 5. Define a new chord Class with the enriched data.
 
+## Key to Chord Assignment
+
+(Script [assign_key_to_chords.py](assign_key_to_chords.py))
+
+1. Retrieve key for each song.
+
+2. Calculate the key for every time period.
+
+3. Match each chord to the corresponding key.
+
+## Convert Chords
+
+(Script [convert_chords.py](convert_chords.py))
+
+This script is used in order to keep only triads and tetrads.
+
+## Convert Names
+
+(Script [convert_to_names.py](convert_to_names.py))
+
+This script is used to remove '.txt' from each song, so we can define our ontology instances.
+
+## Convert Songs to RDF files
+
+### 1. Beat enriched data
+
+(Script [convert_chord_beats_to_rdf.py](convert_chord_beats_to_rdf.py))
+
+1. Define the data properties (hasBars, hasTimeSignature) of our ontology.
+
+2. Add every chord and its corresponding data property values to a graph.
+
+### 2. Key enriched data
+
+(Script [convert_chord_degrees_to_rdf.py](convert_chord_degrees_to_rdf.py))
+
+1. Define the object properties (hasNext, hasPrevious, hasKey) of our ontology.
+
+2. Add every chord and its corresponding object property values to a graph.
 
 ### Ontology
 
