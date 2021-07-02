@@ -1,0 +1,46 @@
+SPARQL Query to return all 4-chord progressions:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns1: <file://onto.owl#>
+PREFIX chord: <http://purl.org/ontology/chord/>
+PREFIX mto: <https://purl.org/ontology/mto/>
+select ?x ?y ?z ?w where { 
+	?x rdf:type chord:Chord.
+    ?y rdf:type chord:Chord.
+    ?z rdf:type chord:Chord.
+    ?w rdf:type chord:Chord.
+    ?x ns1:hasNext ?y.
+    ?y ns1:hasNext ?z.
+    ?z ns1:hasNext ?w.
+}
+
+The result is 11543 chord progressions.
+
+SPARQL Query to return all 4-chord progressions where all the chords last for the same time:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns1: <file://onto.owl#>
+PREFIX chord: <http://purl.org/ontology/chord/>
+PREFIX mto: <https://purl.org/ontology/mto/>
+select ?x ?y ?z ?w ?o where { 
+	?x rdf:type chord:Chord.
+    ?y rdf:type chord:Chord.
+    ?z rdf:type chord:Chord.
+    ?w rdf:type chord:Chord.
+    ?x ns1:hasNext ?y.
+    ?y ns1:hasNext ?z.
+    ?z ns1:hasNext ?w.
+    ?x ns1:hasBars ?o.
+    ?y ns1:hasBars ?o.
+    ?z ns1:hasBars ?o.
+    ?w ns1:hasBars ?o.    
+}
+
+The result is 71 chord progressions.
+
+
+
+
+
