@@ -6,7 +6,7 @@ PREFIX ns1: <file://onto.owl#>
 PREFIX chord: <http://purl.org/ontology/chord/>
 PREFIX mto: <https://purl.org/ontology/mto/>
 select ?x ?y ?z ?w where { 
-	?x rdf:type chord:Chord.
+    ?x rdf:type chord:Chord.
     ?y rdf:type chord:Chord.
     ?z rdf:type chord:Chord.
     ?w rdf:type chord:Chord.
@@ -25,7 +25,7 @@ PREFIX ns1: <file://onto.owl#>
 PREFIX chord: <http://purl.org/ontology/chord/>
 PREFIX mto: <https://purl.org/ontology/mto/>
 select ?x ?y ?z ?w ?o where { 
-	?x rdf:type chord:Chord.
+    ?x rdf:type chord:Chord.
     ?y rdf:type chord:Chord.
     ?z rdf:type chord:Chord.
     ?w rdf:type chord:Chord.
@@ -39,6 +39,49 @@ select ?x ?y ?z ?w ?o where {
 }
 
 The result is 71 chord progressions.
+
+SPARQL Query to return all I maj → IV maj → I maj → IV maj progressions:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns1: <file://onto.owl#>
+PREFIX chord: <http://purl.org/ontology/chord/>
+PREFIX mto: <https://purl.org/ontology/mto/>
+select ?x ?y ?z ?w where { 
+    ?x rdf:type ns1:MajorChord.
+    ?y rdf:type ns1:MajorChord.
+    ?z rdf:type ns1:MajorChord.
+    ?w rdf:type ns1:MajorChord.    
+    ?x rdf:type ns1:First.
+    ?y rdf:type ns1:Fourth.
+    ?z rdf:type ns1:First.
+    ?w rdf:type ns1:Fourth.
+    ?x ns1:hasNext ?y.
+    ?y ns1:hasNext ?z.
+    ?z ns1:hasNext ?w.
+}
+
+The result is 542 chord progressions.
+
+In addition, we can use SPARQL Queries to perform statistical analysis on our Dataset. 
+
+SPARQL Query to return all chords that last for one bar:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns1: <file://onto.owl#>
+PREFIX chord: <http://purl.org/ontology/chord/>
+PREFIX mto: <https://purl.org/ontology/mto/>
+select ?x where { 
+    ?x rdf:type chord:Chord.
+    ?x ns1:hasBars ?o.
+    FILTER (?o = 1.0)     
+}
+
+The result is 321 chords.
+
+All results can be downloaded as CSV files for further analysis.
+
 
 
 
