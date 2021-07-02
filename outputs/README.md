@@ -1,1 +1,1 @@
-
+Here we present some examples of SPARQL Queries we performed based on this paper (https://www.researchgate.net/publication/220722897_Characterisation_of_Harmony_With_Inductive_Logic_Programming). We can enrich this results by adding chord time restrictions.
